@@ -1,80 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="color-scheme" content="light">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ram Manchem | ML & AI Engineer</title>
-<meta name="description" content="Ram Manchem: machine learning, MLOps and agentic AI engineer based in London.">
+<meta name="description" content="Ram Manchem builds machine learning and LLM systems that keep working in production. Based in London.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#fafaf8; --card:#ffffff; --ink:#1c1c1a; --dim:#5f5f5a; --line:#e6e6e1; --accent:#2b5fd9; --tag:#f0f0ec;}
-  @media (prefers-color-scheme: dark){:root{--bg:#121212; --card:#1b1b1a; --ink:#f2f2ef; --dim:#a3a39d; --line:#2b2b29; --accent:#7aa2ff; --tag:#242422;}}
+  :root{
+    --bg:#f3f9ff; --surface:#ffffff; --ink:#121826; --dim:#566074; --line:#d6e6f5;
+    --violet:#0b72b9; --violet-soft:#dff1fd; --mint:#0b72b9; --mint-soft:#dff1fd;
+    --display:'Bricolage Grotesque', system-ui, sans-serif;
+    --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
-  a{color:var(--accent); text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .wrap{max-width:860px; margin:0 auto; padding:0 20px;}
-  header.top{border-bottom:1px solid var(--line); background:var(--bg); position:sticky; top:0; z-index:10;}
-  header.top .wrap{display:flex; justify-content:space-between; align-items:center; height:56px;}
-  header.top strong{font-size:16px; white-space:nowrap;}
-  nav a{margin-left:20px; font-size:14px; color:var(--dim);}
-  nav a:hover{color:var(--ink); text-decoration:none;}
-  @media(max-width:560px){nav a{margin-left:12px; font-size:13px;}}
-  .hero{padding:56px 0 40px; display:flex; gap:32px; align-items:center;}
-  .hero img{width:140px; height:140px; border-radius:50%; object-fit:cover; border:1px solid var(--line); flex-shrink:0;}
-  .hero h1{font-size:clamp(30px,5vw,42px); line-height:1.15; letter-spacing:-0.02em;}
-  .hero .role{color:var(--dim); font-size:18px; margin-top:6px;}
-  .badge{display:inline-block; margin-top:14px; font-size:13px; padding:5px 12px; border-radius:999px; background:var(--tag); color:var(--ink);}
-  .badge i{display:inline-block; width:8px; height:8px; border-radius:50%; background:#3aa66b; margin-right:8px;}
-  .links{margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;}
-  .btn{display:inline-block; padding:9px 16px; border-radius:8px; font-size:14px; font-weight:600; border:1px solid var(--line); background:var(--card); color:var(--ink);}
-  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
-  .btn:hover{text-decoration:none; opacity:.9;}
-  @media(max-width:620px){.hero{flex-direction:column; align-items:flex-start; padding-top:36px;}}
-  section{padding:36px 0; border-top:1px solid var(--line);}
-  h2{font-size:22px; margin-bottom:20px; letter-spacing:-0.01em;}
-  .about p{color:var(--dim); font-size:17px; max-width:70ch;}
-  .cards{display:grid; gap:18px;}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px;}
-  .card h3{font-size:18px;}
-  .card .meta{color:var(--dim); font-size:13px; margin:2px 0 10px;}
-  .card p{color:var(--dim); font-size:15px;}
-  .card ul{margin:10px 0 0 18px; color:var(--dim); font-size:15px;}
-  .card li{margin-bottom:4px;}
-  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px;}
-  .tags span{font-size:12.5px; padding:3px 10px; border-radius:999px; background:var(--tag); color:var(--dim);}
-  .card .actions{margin-top:14px; font-size:14px;}
-  .skills{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
-  @media(max-width:620px){.skills{grid-template-columns:1fr;}}
-  .skills h3{font-size:15px; margin-bottom:8px;}
-  .skills .tags{margin-top:0;}
-  .tl{display:grid; gap:18px;}
-  .tl .row{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
-  .tl .row strong{font-size:16px;}
-  .tl .when{color:var(--dim); font-size:14px;}
-  .tl .sub{color:var(--dim); font-size:14px;}
-  .tl ul{margin:8px 0 0 18px; color:var(--dim); font-size:15px;}
-  footer{padding:32px 0 48px; border-top:1px solid var(--line); color:var(--dim); font-size:13px;}
+  body{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--violet); outline-offset:3px; border-radius:6px;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:var(--display); letter-spacing:-0.02em;}
+
+  /* top bar */
+  .bar{position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .bar .wrap{display:flex; align-items:center; justify-content:space-between; height:60px;}
+  .bar strong{font-family:var(--display); font-weight:700; font-size:18px; white-space:nowrap;}
+  .bar nav{display:flex; gap:22px; font-size:15px;}
+  .bar nav a{color:var(--dim); text-decoration:none;}
+  .bar nav a:hover{color:var(--ink);}
+  @media(max-width:560px){.bar nav{gap:14px; font-size:14px;} .bar nav a:nth-child(3){display:none;}}
+
+  /* hero */
+  .hero{padding:72px 0 28px;}
+  .hero-grid{display:grid; grid-template-columns:1fr 280px; gap:56px; align-items:center;}
+  .hero h1{font-weight:800; font-size:clamp(38px,6vw,68px); line-height:1.04; letter-spacing:-0.035em; max-width:15ch;}
+  .hero .role{margin-top:22px; font-size:19px; color:var(--dim); max-width:46ch;}
+  .status{display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:7px 14px; border-radius:999px; background:var(--mint-soft); font-size:14.5px; font-weight:500;}
+  .status i{width:9px; height:9px; border-radius:50%; background:var(--mint);}
+  .actions{margin-top:26px; display:flex; flex-wrap:wrap; gap:10px;}
+  .btn{display:inline-block; padding:11px 20px; border-radius:10px; font-weight:600; font-size:15px; text-decoration:none; border:1.5px solid var(--ink); color:var(--ink); background:transparent; font-family:inherit; cursor:pointer; transition:background .15s, color .15s;}
+  .btn:hover{background:var(--ink); color:var(--bg);}
+  .btn.primary{background:var(--violet); border-color:var(--violet); color:#fff;}
+  .btn.primary:hover{filter:brightness(1.08); background:var(--violet); color:#fff;}
+  .portrait{position:relative; justify-self:end; width:280px; height:300px;}
+  .portrait::before{content:""; position:absolute; inset:18px -14px -14px 18px; background:var(--violet); border-radius:46% 54% 50% 50% / 44% 46% 54% 56%;}
+  .portrait img{position:relative; width:100%; height:100%; object-fit:cover; border-radius:54% 46% 52% 48% / 48% 52% 48% 52%;}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr; gap:36px;} .portrait{justify-self:start; width:180px; height:195px; order:-1;}}
+
+  /* pipeline strip */
+  .pipe{margin-top:56px; padding:26px 28px; background:var(--surface); border:1px solid var(--line); border-radius:20px;}
+  .pipe h2{font-size:18px; font-weight:700; margin-bottom:6px;}
+  .pipe p.note{color:var(--dim); font-size:15px; margin-bottom:22px; max-width:62ch;}
+  .stages{list-style:none; display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative;}
+  .stages li{position:relative; padding-top:26px; padding-right:14px;}
+  .stages li::before{content:""; position:absolute; top:9px; left:0; right:0; height:3px; background:var(--line);}
+  .stages li::after{content:""; position:absolute; top:3px; left:0; width:15px; height:15px; border-radius:50%; background:var(--bg); border:3px solid var(--line);}
+  .stages li:last-child::before{right:auto; width:15px;}
+  .stages a{text-decoration:none; display:block;}
+  .stages b{display:block; font-family:var(--display); font-size:17px;}
+  .stages span{display:block; font-size:14px; color:var(--dim); line-height:1.45; margin-top:2px;}
+  .stages a:hover b{color:var(--violet);}
+  @keyframes fillbar{from{background:var(--line);} to{background:var(--violet);}}
+  @keyframes filldot{from{border-color:var(--line);} to{border-color:var(--violet); background:var(--violet);}}
+  .stages li::before{animation:fillbar .5s ease forwards; animation-delay:calc(var(--i) * .45s + .4s);}
+  .stages li::after{animation:filldot .4s ease forwards; animation-delay:calc(var(--i) * .45s + .3s);}
+  @media(prefers-reduced-motion:reduce){.stages li::before{animation:none; background:var(--violet);} .stages li::after{animation:none; border-color:var(--violet); background:var(--violet);} html{scroll-behavior:auto;}}
+  @media(max-width:820px){
+    .stages{grid-template-columns:1fr; gap:16px;}
+    .stages li{padding:0 0 0 34px;}
+    .stages li::before{top:18px; bottom:-16px; left:7px; right:auto; width:3px; height:auto;}
+    .stages li::after{top:2px;}
+    .stages li:last-child::before{display:none;}
+  }
+
+  section{padding:76px 0 0;}
+  h2.title{font-size:clamp(26px,3.4vw,36px); font-weight:700; margin-bottom:28px;}
+
+  /* about */
+  .about p{font-size:clamp(19px,2.2vw,24px); line-height:1.55; max-width:52ch; font-family:var(--display); font-weight:500; letter-spacing:-0.01em;}
+
+  /* projects */
+  .proj{display:grid; gap:20px;}
+  .p{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px; scroll-margin-top:84px;}
+  .p h3{font-size:22px; font-weight:700; line-height:1.2;}
+  .p .kind{display:flex; gap:8px; margin-bottom:10px; font-size:13.5px;}
+  .p .kind span{padding:2px 10px; border-radius:6px; background:var(--violet-soft);}
+  .p .kind span+span{background:transparent; border:1px solid var(--line); color:var(--dim);}
+  .p .sum{color:var(--dim); margin-top:10px; font-size:16px;}
+  .p ul{margin:14px 0 0 18px; color:var(--dim); font-size:15.5px;}
+  .p li{margin-bottom:5px;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:16px;}
+  .tags span{font-size:13px; padding:3px 10px; border-radius:6px; background:var(--bg); border:1px solid var(--line); color:var(--dim);}
+  .p .go{display:inline-block; margin-top:18px; font-weight:600; font-size:15px; color:var(--violet); text-decoration:none; border-bottom:2px solid currentColor;}
+  .p .go:hover{opacity:.8;}
+  .flow{list-style:none; position:relative;}
+  .flow li{position:relative; padding:0 0 14px 28px; font-size:15px; font-weight:500;}
+  .flow li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:11px; border-radius:50%; background:var(--mint);}
+  .flow li::after{content:""; position:absolute; left:8px; top:20px; bottom:-2px; width:2px; background:var(--line);}
+  .flow li:last-child{padding-bottom:0;} .flow li:last-child::after{display:none;}
+  .p.big{display:grid; grid-template-columns:1.25fr 1fr; gap:36px; padding:34px; border-radius:26px; border-color:var(--violet);}
+  .p.big h3{font-size:clamp(26px,3vw,34px);}
+  .p.big .diagram{background:var(--bg); border-radius:18px; padding:24px;}
+  .p.big .diagram b{display:block; font-family:var(--display); font-size:15px; margin-bottom:14px;}
+  .smalls{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .smalls .p{border-radius:14px; padding:22px; display:flex; flex-direction:column;}
+  .smalls .p .flow{margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
+  .smalls .p .go{margin-top:auto; align-self:flex-start;}
+  .smalls .tags{margin-bottom:18px;}
+  @media(max-width:900px){.smalls{grid-template-columns:1fr;} .p.big{grid-template-columns:1fr; padding:26px;}}
+
+  /* skills: layered stack map */
+  .stack{border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--surface);}
+  .layer{display:grid; grid-template-columns:200px 1fr; gap:24px; padding:20px 26px; border-top:1px solid var(--line); align-items:start;}
+  .layer:first-child{border-top:none;}
+  .layer:nth-child(even){background:color-mix(in srgb, var(--violet-soft) 45%, var(--surface));}
+  .layer h3{font-size:16px; font-weight:700; padding-top:3px;}
+  .layer .tags{margin-top:0;}
+  .layer .tags span{background:var(--surface); color:var(--ink);}
+  .layer.basic{background:var(--surface);}
+  .layer.basic h3{color:var(--dim);}
+  .layer.basic .tags span{border-style:dashed; color:var(--dim); background:transparent;}
+  @media(max-width:700px){.layer{grid-template-columns:1fr; gap:10px; padding:18px 20px;}}
+
+  /* timeline */
+  .tl{border-left:3px solid var(--line); margin-left:6px; padding-left:28px; display:grid; gap:30px;}
+  .tl .item{position:relative;}
+  .tl .item::before{content:""; position:absolute; left:-37px; top:8px; width:15px; height:15px; border-radius:50%; background:var(--bg); border:3px solid var(--violet);}
+  .tl .when{font-size:14px; color:var(--dim);}
+  .tl h3{font-size:20px; font-weight:700;}
+  .tl .org{color:var(--dim); font-size:15.5px;}
+  .tl ul{margin:10px 0 0 18px; color:var(--dim); font-size:15.5px;}
+  .tl li{margin-bottom:4px;}
+  .edu{margin-top:44px;}
+
+  .read a{color:var(--violet); font-weight:600; text-decoration:none; border-bottom:2px solid currentColor;}
+
+  /* contact */
+  .contact{margin-top:76px; background:var(--violet); color:#fff; border-radius:28px; padding:48px 40px;}
+  .contact h2{font-size:clamp(30px,4.6vw,48px); font-weight:800; line-height:1.08; letter-spacing:-0.03em; max-width:16ch;}
+  .contact p{margin-top:14px; max-width:46ch; opacity:.92;}
+  .contact .addr{margin-top:22px; font-family:var(--display); font-size:clamp(20px,3vw,28px); font-weight:700; user-select:all; word-break:break-all;}
+  .contact .actions .btn{border-color:#fff; color:#fff;}
+  .contact .actions .btn:hover{background:#fff; color:var(--violet);}
+  .contact .actions .btn.light{background:#fff; color:var(--violet);}
+  .contact .actions .btn.light:hover{background:#eaf6ff;}
+  @media(max-width:560px){.contact{padding:34px 24px; border-radius:22px;}}
+  footer{padding:36px 0 56px; color:var(--dim); font-size:14px;}
 </style>
 </head>
 <body>
 
 <!-- =====================================================================
      HOW TO EDIT THIS PAGE
-     Everything you see is generated from the CONTENT block in the script
-     tag just below. Change the text between the quote marks, save the
-     file, and refresh the browser. Do not touch anything below the line
-     "DO NOT EDIT BELOW THIS LINE".
-       - To hide a project's repo button, set repo: ""
-       - To add a project, copy one whole { ... }, block and paste it
-       - Your photo is stored at the very bottom (PHOTO)
+     All the words, links and lists live in the CONTENT block just below.
+     Change the text between the quote marks, save, and refresh the page.
+       - repo: ""            hides a project's code link
+       - to copy a project   copy one whole { ... }, block and paste it
+       - pipeline            the five steps in the top strip (to: id of a project)
+       - Do not edit anything under the line "DO NOT EDIT BELOW THIS LINE"
      ===================================================================== -->
 <script>
 const CONTENT = {
   name: "Ram Manchem",
-  role: "ML, MLOps & Agentic AI Engineer",
-  status: "Based in London · Open to work · Right to work in the UK (Graduate visa to July 2028)",
-  about: "I build machine learning and LLM systems that run reliably in production: training and evaluation, MLOps infrastructure, and agentic AI. I have an MSc in Advanced Computer Science (University of Hertfordshire, 2026) and two years of 24x7 production support at Infosys, which taught me to care about reliability as much as accuracy.",
+  headline: "I build machine learning systems that keep working after the demo.",
+  role: "Data scientist and ML engineer in London, working across MLOps and agentic AI, with an MSc in Advanced Computer Science and two years of 24x7 production support behind me.",
+  status: "Open to work in London",
+  rightToWork: "Right to work in the UK (Graduate visa to July 2028)",
+
+  about: "I like the unglamorous part of machine learning: tests, evaluation, deployment and monitoring. Two years of production support at Infosys taught me to care about reliability as much as accuracy, and I rebuilt my main project at every stage of my learning, from a single script to a deployed, monitored agent, to understand each layer properly.",
 
   links: {
     email:    "rammanchem98@gmail.com",
@@ -83,72 +179,85 @@ const CONTENT = {
     medium:   "https://medium.com/@rammanchem98"
   },
 
-  // ---- PROJECTS: newest first. repo: "" hides the button. ----
+  // ---- THE PIPELINE STRIP: five steps, each links to a project (to = project id) ----
+  pipelineNote: "Every stage below is something I have built and shipped. Click one to see where.",
+  pipeline: [
+    { stage: "Data",     text: "Ingestion into BigQuery",              to: "vertex" },
+    { stage: "Train",    text: "PyTorch network, logged in MLflow",    to: "microservice" },
+    { stage: "Serve",    text: "FastAPI on Kubernetes and Cloud Run",  to: "microservice" },
+    { stage: "Evaluate", text: "A harness that caught a real regression", to: "agent" },
+    { stage: "Monitor",  text: "Prometheus and Grafana",               to: "agent" }
+  ],
+
+  // ---- PROJECTS: the FIRST one is shown large. repo: "" hides the code link. ----
   projects: [
     {
-      title: "Air Quality Agent",
-      meta: "Agentic AI · 2026",
+      id: "agent",
+      title: "Weather Agent MLOps",
+      kind: "Agentic AI", year: "2026",
       summary: "An LLM agent that answers live weather and air-quality questions, built to be tested, monitored and deployed like production software.",
       points: [
         "LangGraph agent with persistent memory, Qdrant-backed RAG and MCP tool servers.",
-        "Layered prompt-injection guardrails and a custom evaluation harness (golden queries, LLM-as-judge) that caught a real tool-selection regression and proved the fix.",
-        "Deployed to Google Cloud Run with Terraform and GitHub Actions; monitored with Prometheus and Grafana."
+        "Layered prompt-injection guardrails, plus a custom evaluation harness (golden queries, LLM-as-judge) that caught a real tool-selection regression and proved the fix.",
+        "Deployed to Google Cloud Run with Terraform and GitHub Actions, and monitored with Prometheus and Grafana."
       ],
+      flow: ["Question", "Guardrails", "LangGraph agent", "MCP tools and Qdrant RAG", "Answer"],
       tags: ["LangGraph", "MCP", "RAG", "Qdrant", "Terraform", "Cloud Run", "Prometheus", "pytest"],
       repo: "https://github.com/rammanchem98/weather_agent_mlops"
     },
     {
-      title: "Weekly Client Coverage Summary",
-      meta: "LLM pipeline · 2026",
+      id: "coverage",
+      title: "Monday Coverage Demo",
+      kind: "LLM pipeline", year: "2026",
       summary: "Turns a week of news articles into a short report for non-technical readers.",
-      points: [
-        "Removes duplicate articles, then has an LLM return sentiment and themes in a validated schema.",
-        "Counts are computed in code, not by the LLM. Includes a labelled accuracy check, pytest tests and a no-API-key mock mode."
-      ],
-      tags: ["Python", "Pydantic", "LLM", "pytest"],
+      points: [],
+      flow: ["News articles", "Remove duplicates", "LLM, validated schema", "Counts in code", "Weekly report"],
+      tags: ["Python", "Pydantic", "pytest", "Mock mode"],
       repo: "https://github.com/rammanchem98/monday-coverage-demo"
     },
     {
+      id: "vertex",
       title: "Vertex AI Air Quality Forecaster",
-      meta: "MLOps on GCP · 2025",
-      summary: "A GCP-native ML pipeline for air-quality prediction.",
-      points: [
-        "Cloud Run ingestion across ten cities into BigQuery.",
-        "Kubeflow / Vertex AI training pipeline and a scheduled batch-prediction job that logs results for monitoring."
-      ],
-      tags: ["Vertex AI", "Kubeflow", "BigQuery", "Cloud Run", "Docker"],
+      kind: "MLOps on GCP", year: "2025",
+      summary: "A GCP-native pipeline for air-quality prediction across ten cities.",
+      points: [],
+      flow: ["Cloud Run ingestion", "BigQuery", "Vertex AI pipeline", "Model Registry", "Scheduled batch prediction"],
+      tags: ["Vertex AI", "Kubeflow", "BigQuery", "Cloud Run", "Cloud Build"],
       repo: "https://github.com/rammanchem98/vertex-ai-air-quality-forecaster"
     },
     {
-      title: "Distributed ML Microservice",
-      meta: "MLOps on AWS · 2024",
-      summary: "A PyTorch neural network that predicts diabetes progression, served as a service on Kubernetes (also known as the Diabetes Progression Predictor repo).",
-      points: [
-        "Neural network trained and evaluated with PyTorch; every run tracked with MLflow and PostgreSQL.",
-        "Served with FastAPI and Docker on AWS EKS, with GitHub Actions pipelines, rebuilt on Terraform with least-privilege IAM."
-      ],
-      tags: ["PyTorch", "MLflow", "FastAPI", "Docker", "Kubernetes", "AWS EKS", "Terraform"],
+      id: "microservice",
+      title: "Diabetes MLOps Pipeline",
+      kind: "MLOps on AWS", year: "2024",
+      summary: "A PyTorch neural network (diabetes progression) served as a service on Kubernetes.",
+      points: [],
+      flow: ["Dataset", "PyTorch training", "MLflow and PostgreSQL", "FastAPI service", "Kubernetes (EKS)"],
+      tags: ["PyTorch", "MLflow", "FastAPI", "Docker", "Kubernetes", "Terraform"],
       repo: "https://github.com/rammanchem98/diabetes-mlops-pipeline"
     }
   ],
 
-  // ---- SKILLS ----
+  // ---- SKILLS: each group is one row. basic: true gives the lighter dashed style. ----
   skills: [
-    { group: "Languages & Data",  items: ["Python", "SQL", "MySQL", "PostgreSQL", "Java", "pandas", "NumPy"] },
-    { group: "Machine Learning",  items: ["scikit-learn", "XGBoost", "PyTorch", "TensorFlow", "MLflow"] },
-    { group: "LLM & Agents",      items: ["LangGraph", "LangChain", "MCP", "RAG (Qdrant)", "LLM evaluation", "Guardrails", "Gemini API"] },
-    { group: "MLOps & Cloud",     items: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "AWS (EKS, EMR, Athena)", "GCP (Cloud Run, Vertex AI)", "Prometheus", "Grafana"] },
-    { group: "Engineering",       items: ["FastAPI", "pytest", "Git", "Linux", "Agile"] }
+    { group: "Programming and data", items: ["Python", "SQL", "Java", "pandas", "NumPy", "Data Structures"] },
+    { group: "Data engineering", items: ["pandas", "NumPy", "SQL", "PostgreSQL", "MySQL", "BigQuery", "AWS EMR", "AWS Athena", "Cloud Storage", "Cloud Run Jobs", "Vertex AI Pipelines", "Kubeflow Pipelines v2", "Data validation", "Batch ingestion"] },
+    { group: "Machine learning", items: ["scikit-learn", "XGBoost", "PyTorch", "TensorFlow", "Neural Networks", "Classification", "Logistic Regression", "Regression", "Clustering", "Model Evaluation", "Statistics & Probability"] },
+    { group: "LLM and agentic AI", items: ["LangGraph", "LangChain", "MCP servers", "RAG (Qdrant)", "LLM-as-judge evaluation", "Guardrails & prompt-injection defence", "Gemini API"] },
+    { group: "MLOps", items: ["MLflow", "Vertex AI (Pipelines, Model Registry, Schedules)", "Kubeflow Pipelines v2", "Docker", "Docker Compose", "Docker Hub", "Kubernetes (Minikube, EKS)", "GitHub Actions", "Prometheus", "Grafana"] },
+    { group: "Cloud and infrastructure", items: ["AWS (EKS, EMR, Athena)", "GCP (Cloud Run, Compute Engine, Secret Manager, BigQuery, Cloud Storage, Cloud Build)", "Terraform", "Workload Identity Federation (keyless CI/CD)", "Linux"] },
+    { group: "Backend and engineering", items: ["FastAPI", "Pydantic", "REST APIs", "OpenWeatherMap API", "Postman", "Spring Boot", "MySQL", "PostgreSQL", "Maven", "Tomcat", "pytest", "Git", "Makefile", "Agile", "ServiceNow"] },
+    { group: "Currently learning", basic: true, items: ["AWS Certified Machine Learning Engineer Associate (preparing)", "AWS Glue (crawlers)", "Amazon S3", "Amazon SageMaker", "AWS Lambda"] },
+    { group: "Basic level", basic: true, items: ["Bash", "TypeScript", "MongoDB", "Redis"] }
   ],
 
-  // ---- EXPERIENCE & EDUCATION ----
+  // ---- EXPERIENCE AND EDUCATION ----
   experience: [
     {
-      title: "Retail Assistant (part-time)", org: "Sainsbury's Supermarket, Staines", when: "May 2024 – Present",
+      title: "Retail Assistant (part-time)", org: "Sainsbury's Supermarket, Staines", when: "May 2024 to present",
       points: ["Serve customers in a busy supermarket, answering queries and resolving issues."]
     },
     {
-      title: "Production Support Developer", org: "Infosys, India (McCamish PMACS, insurance)", when: "Sep 2021 – Sep 2023",
+      title: "Production Support Developer", org: "Infosys, India (McCamish PMACS, insurance)", when: "Sep 2021 to Sep 2023",
       points: [
         "24x7 production support for three clients, resolving incidents by severity under strict SLAs (Java, Spring Boot, MySQL, ServiceNow).",
         "Helped upgrade Tomcat servers and migrate the application from Struts to Spring Boot.",
@@ -161,74 +270,95 @@ const CONTENT = {
     { title: "BTech Computer Science and Engineering", org: "Swarnandhra College of Engineering and Technology, India", when: "Sep 2020", note: "" }
   ],
 
-  // ---- WRITING (leave as [] to hide the section) ----
+  // ---- WRITING (use [] to hide) ----
   writing: [
-    {
-      title: "From Pipelines to Prompts: How I Discovered the Power of GenAI After Learning Traditional ML",
-      url: "https://medium.com/@rammanchem98/from-pipelines-to-prompts-how-i-discovered-the-power-of-genai-after-learning-traditional-ml-cce30a2659fa"
-    }
-  ]
+    { title: "From Pipelines to Prompts: How I Discovered the Power of GenAI After Learning Traditional ML",
+      url: "https://medium.com/@rammanchem98/from-pipelines-to-prompts-how-i-discovered-the-power-of-genai-after-learning-traditional-ml-cce30a2659fa" }
+  ],
+
+  contactLine: "I am looking for a junior data science, ML or AI engineering role. The quickest way to reach me is email."
 };
 </script>
 
 <!-- ===================== DO NOT EDIT BELOW THIS LINE ===================== -->
-<header class="top"><div class="wrap">
+<div class="bar"><div class="wrap">
   <strong id="navName"></strong>
   <nav><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-</div></header>
-<main class="wrap" id="app"></main>
+</div></div>
+<main id="app"></main>
 <footer><div class="wrap" id="foot"></div></footer>
 
 <script>
 window.addEventListener('DOMContentLoaded', function(){
-const C = CONTENT;
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const tags = a => '<div class="tags">' + a.map(t => '<span>' + esc(t) + '</span>').join('') + '</div>';
-const list = a => a && a.length ? '<ul>' + a.map(p => '<li>' + esc(p) + '</li>').join('') + '</ul>' : '';
-document.getElementById('navName').textContent = C.name;
-let h = '';
-h += '<div class="hero"><img src="' + PHOTO + '" alt="' + esc(C.name) + '"><div>' +
-     '<h1>' + esc(C.name) + '</h1><div class="role">' + esc(C.role) + '</div>' +
-     '<span class="badge"><i></i>' + esc(C.status) + '</span>' +
-     '<div class="links">' +
-       '<a class="btn primary" href="#contact">Contact me</a>' +
+  var C = CONTENT;
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var tags = function(a){ return '<div class="tags">' + a.map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div>'; };
+  var list = function(a){ return a && a.length ? '<ul>' + a.map(function(p){ return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' : ''; };
+  var flow = function(a){ return '<ol class="flow">' + a.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>'; };
+  var go = function(p){ return p.repo ? '<a class="go" href="' + esc(p.repo) + '" target="_blank" rel="noopener">View the code on GitHub</a>' : ''; };
+  document.getElementById('navName').textContent = C.name;
+
+  var h = '';
+  // hero
+  h += '<div class="hero"><div class="wrap"><div class="hero-grid"><div>' +
+       '<h1>' + esc(C.headline) + '</h1><p class="role">' + esc(C.role) + '</p>' +
+       '<div class="status"><i></i>' + esc(C.status) + '. ' + esc(C.rightToWork) + '</div>' +
+       '<div class="actions"><a class="btn primary" href="#contact">Contact me</a>' +
+       '<a class="btn" href="' + esc(C.links.github) + '" target="_blank" rel="noopener">GitHub</a>' +
+       '<a class="btn" href="' + esc(C.links.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a></div>' +
+       '</div><div class="portrait"><img src="' + PHOTO + '" alt="' + esc(C.name) + '"></div></div>';
+  h += '<div class="pipe"><h2>From data to monitoring</h2><p class="note">' + esc(C.pipelineNote) + '</p><ol class="stages">' +
+       C.pipeline.map(function(s, i){ return '<li style="--i:' + i + '"><a href="#' + esc(s.to) + '"><b>' + esc(s.stage) + '</b><span>' + esc(s.text) + '</span></a></li>'; }).join('') +
+       '</ol></div></div></div>';
+
+  // about
+  h += '<section class="about"><div class="wrap"><p>' + esc(C.about) + '</p></div></section>';
+
+  // projects
+  var big = C.projects[0], rest = C.projects.slice(1);
+  h += '<section id="projects"><div class="wrap"><h2 class="title">What I have built</h2><div class="proj">';
+  h += '<article class="p big" id="' + esc(big.id) + '"><div><div class="kind"><span>' + esc(big.kind) + '</span><span>' + esc(big.year) + '</span></div><h3>' + esc(big.title) + '</h3><p class="sum">' + esc(big.summary) + '</p>' + list(big.points) + tags(big.tags) + go(big) + '</div>' +
+       '<div class="diagram"><b>How it works</b>' + flow(big.flow) + '</div></article>';
+  h += '<div class="smalls">' + rest.map(function(p){
+         return '<article class="p" id="' + esc(p.id) + '"><div class="kind"><span>' + esc(p.kind) + '</span><span>' + esc(p.year) + '</span></div><h3>' + esc(p.title) + '</h3><p class="sum">' + esc(p.summary) + '</p>' + list(p.points) + flow(p.flow) + tags(p.tags) + go(p) + '</article>';
+       }).join('') + '</div></div></div></section>';
+
+  // skills
+  h += '<section id="skills"><div class="wrap"><h2 class="title">What I work with</h2><div class="stack">' +
+       C.skills.map(function(s){ return '<div class="layer' + (s.basic ? ' basic' : '') + '"><h3>' + esc(s.group) + '</h3>' + tags(s.items) + '</div>'; }).join('') +
+       '</div></div></section>';
+
+  // experience and education
+  h += '<section id="experience"><div class="wrap"><h2 class="title">Where I have worked</h2><div class="tl">' +
+       C.experience.map(function(e){ return '<div class="item"><div class="when">' + esc(e.when) + '</div><h3>' + esc(e.title) + '</h3><div class="org">' + esc(e.org) + '</div>' + list(e.points) + '</div>'; }).join('') +
+       '</div><div class="edu"><h2 class="title">Where I studied</h2><div class="tl">' +
+       C.education.map(function(e){ return '<div class="item"><div class="when">' + esc(e.when) + '</div><h3>' + esc(e.title) + '</h3><div class="org">' + esc(e.org) + (e.note ? ', ' + esc(e.note) : '') + '</div></div>'; }).join('') +
+       '</div></div></div></section>';
+
+  if (C.writing && C.writing.length) {
+    h += '<section class="read"><div class="wrap"><h2 class="title">What I have written</h2>' +
+         C.writing.map(function(w){ return '<p><a href="' + esc(w.url) + '" target="_blank" rel="noopener">' + esc(w.title) + '</a></p>'; }).join('') + '</div></section>';
+  }
+
+  // contact
+  h += '<section id="contact" style="padding-top:0"><div class="wrap"><div class="contact"><h2>Let us talk about the role.</h2><p>' + esc(C.contactLine) + '</p>' +
+       '<div class="addr">' + esc(C.links.email) + '</div>' +
+       '<div class="actions"><a class="btn light" href="mailto:' + esc(C.links.email) + '">Send email</a>' +
+       '<button class="btn" id="copyBtn" type="button">Copy address</button>' +
        '<a class="btn" href="' + esc(C.links.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' +
        '<a class="btn" href="' + esc(C.links.github) + '" target="_blank" rel="noopener">GitHub</a>' +
-     '</div></div></div>';
-h += '<section class="about"><h2>About</h2><p>' + esc(C.about) + '</p></section>';
-h += '<section id="projects"><h2>Projects</h2><div class="cards">' + C.projects.map(p =>
-     '<div class="card"><h3>' + esc(p.title) + '</h3><div class="meta">' + esc(p.meta) + '</div><p>' + esc(p.summary) + '</p>' +
-     list(p.points) + tags(p.tags) +
-     (p.repo ? '<div class="actions"><a href="' + esc(p.repo) + '" target="_blank" rel="noopener">View on GitHub →</a></div>' : '') +
-     '</div>').join('') + '</div></section>';
-h += '<section id="skills"><h2>Skills</h2><div class="skills">' + C.skills.map(s =>
-     '<div><h3>' + esc(s.group) + '</h3>' + tags(s.items) + '</div>').join('') + '</div></section>';
-h += '<section id="experience"><h2>Experience</h2><div class="tl">' + C.experience.map(e =>
-     '<div><div class="row"><strong>' + esc(e.title) + '</strong><span class="when">' + esc(e.when) + '</span></div>' +
-     '<div class="sub">' + esc(e.org) + '</div>' + list(e.points) + '</div>').join('') + '</div>' +
-     '<h2 style="margin-top:32px">Education</h2><div class="tl">' + C.education.map(e =>
-     '<div><div class="row"><strong>' + esc(e.title) + '</strong><span class="when">' + esc(e.when) + '</span></div>' +
-     '<div class="sub">' + esc(e.org) + (e.note ? ' · ' + esc(e.note) : '') + '</div></div>').join('') + '</div></section>';
-if (C.writing && C.writing.length) {
-  h += '<section><h2>Writing</h2><div class="tl">' + C.writing.map(w =>
-       '<div><a href="' + esc(w.url) + '" target="_blank" rel="noopener">' + esc(w.title) + ' →</a></div>').join('') + '</div></section>';
-}
-h += '<section id="contact"><h2>Contact</h2><p style="color:var(--dim)">The best way to reach me is by email, or on LinkedIn.</p>' +
-     '<p style="margin-top:12px; font-size:18px; font-weight:600; user-select:all">' + esc(C.links.email) + '</p>' +
-     '<div class="links"><a class="btn primary" href="mailto:' + esc(C.links.email) + '">Send email</a>' +
-     '<button class="btn" id="copyBtn" type="button" style="cursor:pointer; font-family:inherit">Copy address</button>' +
-     '<a class="btn" href="' + esc(C.links.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' +
-     '<a class="btn" href="' + esc(C.links.github) + '" target="_blank" rel="noopener">GitHub</a>' +
-     (C.links.medium ? '<a class="btn" href="' + esc(C.links.medium) + '" target="_blank" rel="noopener">Medium</a>' : '') +
-     '</div></section>';
-document.getElementById('app').innerHTML = h;
-document.getElementById('copyBtn').addEventListener('click', function(){
-  var btn=this, txt=C.links.email;
-  function done(){ btn.textContent='Copied!'; setTimeout(function(){ btn.textContent='Copy address'; },1800); }
-  function fallback(){ var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t); t.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(t); done(); }
-  if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(done, fallback); } else { fallback(); }
-});
-document.getElementById('foot').textContent = '© ' + new Date().getFullYear() + ' ' + C.name;
+       (C.links.medium ? '<a class="btn" href="' + esc(C.links.medium) + '" target="_blank" rel="noopener">Medium</a>' : '') +
+       '</div></div></div></section>';
+
+  document.getElementById('app').innerHTML = h;
+  document.getElementById('foot').textContent = '© ' + new Date().getFullYear() + ' ' + C.name;
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var btn = this, txt = C.links.email;
+    function done(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy address'; }, 1800); }
+    function fallback(){ var t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch(e) {} document.body.removeChild(t); done(); }
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(done, fallback); } else { fallback(); }
+  });
 });
 </script>
 
